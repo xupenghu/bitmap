@@ -124,7 +124,32 @@ int8_t init_bitmap(struct _my_bitmap_t *h_bitmap, uint8_t init_state)
     return 0;
 }
 
-
+/*****************************************************
+* 函数功能 : 判断这两个位图数据是否一致
+* 函数名称 : check_bitmap_is_equal
+* 输入参数 : h_bitmap0/h_bitmap1 两个需要对比的位图结构
+* 返回值   :   如果相等则返回0 不等则返回-1
+* 备注 :  
+******************************************************/
+int8_t check_bitmap_is_equal(struct _my_bitmap_t *h_bitmap0, struct _my_bitmap_t *h_bitmap1)
+{
+    int16_t i = -1;
+    for (i = 0; i < BITMAP_MAX_LENGTH; i++)
+    {
+        if (get_bitmap_onebit(h_bitmap0, i) != get_bitmap_onebit(h_bitmap1, i))
+        {
+            break;
+        }
+    }
+    if (i == BITMAP_MAX_LENGTH)
+    {
+        return -1;
+    }
+	else
+	{
+		return 0;
+	}
+}
 
 
 

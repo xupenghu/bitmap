@@ -16,7 +16,7 @@ int8_t get_bitmap_first_set(struct _my_bitmap_t *h_bitmap);
 int8_t set_bitmap_onebit(struct _my_bitmap_t *h_bitmap, uint8_t index);
 int8_t clear_bitmap_onebit(struct _my_bitmap_t *h_bitmap,uint8_t index);
 int8_t init_bitmap(struct _my_bitmap_t *h_bitmap, uint8_t init_state);
-
+int8_t check_bitmap_is_equal(struct _my_bitmap_t *h_bitmap0, struct _my_bitmap_t *h_bitmap1);
 
 
 
